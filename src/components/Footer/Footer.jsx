@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="footer__content">
         <p>&copy; {new Date().getFullYear()} Mi Ecommerce. Todos los derechos reservados.</p>
         <nav className="footer__nav">
-          <a href="/about">Sobre nosotros</a>
+          {/* <a href="/about">Sobre nosotros</a>
           <a href="/contact">Contacto</a>
-          <a href="/terms">Términos</a>
+          <a href="/terms">Términos</a> */}
         </nav>
       </div>
     </footer>
