@@ -1,14 +1,18 @@
-import { useState } from 'react'
 import './App.css'
+import React from 'react'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
+import Counter from './components/Counter/Counter'
+import Form from './components/Form/Form'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
       <Navbar />
+      <Counter />
+      <Form />
       <Footer />
     </>
   )
