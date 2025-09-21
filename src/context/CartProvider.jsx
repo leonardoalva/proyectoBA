@@ -3,12 +3,15 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 function CartProvider({ children }) {
+  // Estado del carrito arranca vacío
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (prod) => {
+    // Verifica si el producto ya está en el carrito
     const isInCart = carrito.some((item) => item.id === prod.id);
 
     if (isInCart) {
+      // Actualiza la cantidad del producto existente
       const productoRepetido = carrito.find((item) => item.id === prod.id);
       const cartSinElProducto = carrito.filter((item) => item.id !== prod.id);
       setCarrito([
@@ -16,6 +19,7 @@ function CartProvider({ children }) {
         { ...productoRepetido, count: productoRepetido.count + prod.count },
       ]);
     } else {
+      // Agrega el nuevo producto al carrito
       setCarrito([...carrito, prod]);
     }
 

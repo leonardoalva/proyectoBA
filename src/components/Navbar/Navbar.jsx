@@ -1,24 +1,54 @@
-import React, { useState } from "react";
-import "./Navbar.css"; // Archivo de estilos
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Cierra el menú si se hace clic fuera
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar__logo">
-          <h2>Logo</h2>
-        </div>
-        <ul className="navbar__links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/products">DLC</a></li>
-          <li><a href="/about">juegos</a></li>
-          <li><a href="/contact">Contacto</a></li>
+    <header className="navbar">
+      <div className="navbar__brand">
+        <h1 className="navbar__logo">GameStore</h1>
+      </div>
+<button
+  className={`navbar__toggle ${isOpen ? "open" : ""}`}
+  onClick={() => setIsOpen((prev) => !prev)}
+  aria-label="Toggle menu"
+>
+  <span className="bar"></span>
+  <span className="bar"></span>
+  <span className="bar"></span>
+</button>
+
+
+      <nav
+        ref={menuRef}
+        className={`navbar__navigation ${isOpen ? "navbar__navigation--open" : ""}`}
+      >
+        <ul className="navbar__menu">
+          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/products" onClick={() => setIsOpen(false)}>DLC</Link></li>
+          <li><Link to="/games" onClick={() => setIsOpen(false)}>Games</Link></li>
+          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
         </ul>
-        <div className="navbar__cart">
-          <a href="/cart">Carrito (0)</a>
-        </div>
       </nav>
-    </>
+
+      <div className="navbar__actions">
+        <Link to="/cart" className="navbar__cart">Cart (0)</Link>
+      </div>
+    </header>
   );
 };
 

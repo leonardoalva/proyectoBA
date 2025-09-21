@@ -1,23 +1,35 @@
 import { useState } from "react";
+import "./Form.css";
+
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone: ""});
+
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target; 
+
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
+  };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const datosFormulario = {
-      name,
-      email,
-      phone,
-    };
-    console.log(datosFormulario);
 
-    setEmail("");
-    setName("");
-    setPhone("");
+    alert(`Gracias ${user.name}, te contactaremos cuanto antes vía mail`);
+    setUser({name: "", email: "", phone: ""});
   };
+
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,21 +37,21 @@ const Form = () => {
         type="text"
         name="name"
         placeholder="ingrese su nombre"
-        value={name}
+        value={user.name}
         onChange={handleChange}
       />
       <input
         type="email"
         name="email"
         placeholder="ingrese su mail"
-        value={email}
+        value={user.email}
         onChange={handleChange}
       />
       <input
         type="number"
         name="phone"
         placeholder="ingrese su telefono"
-        value={phone}
+        value={user.phone}
         onChange={handleChange}
       />
 
