@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar__brand">
-        <h1 className="navbar__logo">GameStore</h1>
+        <h1 className="navbar__logo">Steam</h1>
       </div>
 <button
   className={`navbar__toggle ${isOpen ? "open" : ""}`}

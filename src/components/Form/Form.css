@@ -8,6 +8,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 90%;
 }
 
 input {
@@ -16,6 +17,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 8px;
   transition: border-color 0.3s ease;
+  background-color: darkslateblue;
 }
 
 input:focus {

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Counter from './components/Counter/Counter';
 import Form from './components/Form/Form';
 import { Routes, Route } from 'react-router-dom';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<><p>inicio</p></>} />
-          <Route path="/contact" element={<Form />} />
+          <Route path="/contact" element={<Form />} />         
+           <Route path="/products" element={<ItemListContainer />} />
           {/* Podés agregar más rutas acá */}
         </Routes>
       </main>
