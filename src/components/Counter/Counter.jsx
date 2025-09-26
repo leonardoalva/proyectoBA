@@ -1,17 +1,31 @@
-import { useState } from 'react'
+import { useState } from "react";
+import "./Counter.css";
 
 function Counter() {
-    const [counter,setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
 
-    return (
-        <div>
-            <p>valor del contador:{counter}</p>
-            <button onClick={()=>setCounter(counter + 1)}>Aumentar</button>
-            <button onClick={()=>setCounter(counter - 1)}>Disminuir</button>
-            <button onClick={()=>setCounter(0)}>Resetear</button>
-        </div>
-    )
+  return (
+    <div>
+
+      <p>Cantidad:{counter}</p>
+
+      <button className="btn_counter" onClick={() => setCounter(counter + 1)}>
+        Aumentar
+      </button>
+
+      <button
+        className="btn_counter"
+        onClick={() => {
+          if (counter > 0) setCounter(counter - 1);
+        }}
+      >
+        Disminuir
+      </button>
+
+      
+      {/* <button className='btn_counter' onClick={()=>setCounter(0)}>Resetear</button> */}
+    </div>
+  );
 }
 
-
-export default Counter
+export default Counter;

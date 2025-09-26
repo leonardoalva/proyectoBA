@@ -1,21 +1,22 @@
+import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({ titulo, productos }) => {
-  return (
-    <>
-      <h1>{titulo}</h1>
-      <p>Todos los ESports en un solo lugar </p>
+  // estado
+  //logica 
+ 
 
-      <div className="itemList_grid">
-        {productos.map((prod) => (
-          <article key={prod.id}>
-            <h3>{prod.nombre}</h3>
-            <span className="precio_card">${prod.precio}</span>
-            <p className="descripcion_card">{prod.descripcion}</p>
-          </article>
-        ))}
+
+
+    return (
+    <section>
+      <h1>{titulo}</h1>
+
+      <div>
+        {productos.length > 0 ? <ItemList productos={productos} /> : <p>Cargando productos...</p>
+}
       </div>
-    </>
+    </section>
   );
 };
 

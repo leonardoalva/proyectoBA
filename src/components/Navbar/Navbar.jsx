@@ -18,12 +18,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="navbar">
+<header className={`navbar ${isOpen ? "navbar--expanded" : "navbar--collapsed"}`}>
       <div className="navbar__brand">
         <h1 className="navbar__logo">Steam</h1>
       </div>
 <button
-  className={`navbar__toggle ${isOpen ? "open" : ""}`}
+  className={`navbar__toggle ${isOpen ? "open enlarged" : "shrinked"}`}
   onClick={() => setIsOpen((prev) => !prev)}
   aria-label="Toggle menu"
 >

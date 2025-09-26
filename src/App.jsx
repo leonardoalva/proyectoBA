@@ -1,146 +1,185 @@
-import './App.css';
-import React from 'react';
-import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
-import Counter from './components/Counter/Counter';
-import Form from './components/Form/Form';
-import { Routes, Route } from 'react-router-dom';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import "./App.css";
+import React from "react";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
+import Counter from "./components/Counter/Counter";
+import Form from "./components/Form/Form";
+import { Routes, Route } from "react-router-dom";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
-const arrayProductos = [
-  {
-    id: 1,
-    nombre: 'The Witcher 3: Wild Hunt',
-    precio: 39.99,
-    descripcion: 'Un juego de rol de mundo abierto que sigue la historia de Geralt de Rivia, un cazador de monstruos en un mundo fantástico lleno de criaturas y conflictos políticos.'
-  },
-  {
-    id: 2,
-    nombre: 'Red Dead Redemption 2',
-    precio: 59.99,
-    descripcion: 'Ambientado en el lejano oeste, este juego cuenta la historia de Arthur Morgan y la banda de Van der Linde mientras luchan por sobrevivir en una América en transformación.'
-  },
-  {
-    id: 3,
-    nombre: 'Cyberpunk 2077',
-    precio: 49.99,
-    descripcion: 'Un RPG de acción en primera persona situado en Night City, una metrópolis obsesionada con el poder, el glamour y las modificaciones corporales.'
-  },
-  {
-    id: 4,
-    nombre: 'Elden Ring',
-    precio: 59.99,
-    descripcion: 'Un juego de rol de acción desarrollado por FromSoftware que combina elementos de dark fantasy con un mundo abierto masivo y un sistema de combate desafiante.'
-  },
-  {
-    id: 5,
-    nombre: 'God of War (2018)',
-    precio: 49.99,
-    descripcion: 'Kratos regresa en una nueva aventura nórdica donde debe guiar a su hijo Atreus a través de un mundo peligroso mientras enfrenta dioses y monstruos.'
-  },
-  {
-    id: 6,
-    nombre: 'The Last of Us Part II',
-    precio: 69.99,
-    descripcion: 'Una secuela emocionalmente intensa que sigue a Ellie en su búsqueda de venganza en un mundo post-apocalíptico devastado por una infección fungal.'
-  },
-  {
-    id: 7,
-    nombre: 'Grand Theft Auto V',
-    precio: 29.99,
-    descripcion: 'Tres criminales muy diferentes se ven obligados a trabajar juntos en una serie de peligrosos golpes en la ciudad ficticia de Los Santos.'
-  },
-  {
-    id: 8,
-    nombre: 'Minecraft',
-    precio: 26.95,
-    descripcion: 'Un juego sandbox que permite a los jugadores construir y explorar mundos generados proceduralmente hechos completamente de bloques.'
-  },
-  {
-    id: 9,
-    nombre: 'Call of Duty: Modern Warfare II',
-    precio: 69.99,
-    descripcion: 'Un shooter en primera persona que continúa la historia de la fuerza operativa 141 en misiones globales de alto riesgo contra nuevas amenazas.'
-  },
-  {
-    id: 10,
-    nombre: 'FIFA 23',
-    precio: 59.99,
-    descripcion: 'El último título de la famosa saga de fútbol que incluye mejoras en el gameplay, gráficos actualizados y todos los equipos y ligas oficiales.'
-  },
-  {
-    id: 11,
-    nombre: 'Overwatch 2',
-    precio: 0.00,
-    descripcion: 'Un shooter de equipo free-to-play que presenta héroes únicos con habilidades especiales en combates 5v5 dinámicos y estratégicos.'
-  },
-  {
-    id: 12,
-    nombre: 'Animal Crossing: New Horizons',
-    precio: 54.99,
-    descripcion: 'Un juego de simulación social donde los jugadores crean su propia isla paradisíaca, decoran su hogar y hacen amigos con adorables animales.'
-  },
-  {
-    id: 13,
-    nombre: 'Hogwarts Legacy',
-    precio: 59.99,
-    descripcion: 'Un RPG de acción ambientado en el mundo de Harry Potter donde los jugadores viven su propia aventura como estudiantes de Hogwarts en el siglo XIX.'
-  },
-  {
-    id: 14,
-    nombre: 'Star Wars Jedi: Survivor',
-    precio: 69.99,
-    descripcion: 'La continuación de la historia de Cal Kestis, un jedi que debe enfrentar nuevas amenazas mientras el Imperio Galáctico lo persigue incansablemente.'
-  },
-  {
-    id: 15,
-    nombre: 'Spider-Man: Miles Morales',
-    precio: 49.99,
-    descripcion: 'Sigue las aventuras de Miles Morales mientras aprende a dominar sus nuevos poderes y protege a Nueva York como el nuevo Spider-Man.'
-  },
-  {
-    id: 16,
-    nombre: 'Resident Evil 4 Remake',
-    precio: 59.99,
-    descripcion: 'Un remake modernizado del clásico de terror y acción que sigue a Leon S. Kennedy en su misión para rescatar a la hija del presidente.'
-  },
-  {
-    id: 17,
-    nombre: 'Baldur\'s Gate 3',
-    precio: 59.99,
-    descripcion: 'Un RPG basado en Dungeons & Dragons con una narrativa profunda, combate táctico por turnos y miles de opciones que afectan la historia.'
-  },
-  {
-    id: 18,
-    nombre: 'Super Mario Odyssey',
-    precio: 49.99,
-    descripcion: 'Mario viaja por distintos reinos en su sombrero viviente Cappy para rescatar a la Princesa Peach de Bowser quien planea una boda forzada.'
-  },
-  {
-    id: 19,
-    nombre: 'Assassin\'s Creed Valhalla',
-    precio: 39.99,
-    descripcion: 'Un RPG de acción que sigue a Eivor, un fiero vikingo que lidera a su clan desde Noruega hasta Inglaterra durante la era vikinga.'
-  },
-  {
-    id: 20,
-    nombre: 'Legend of Zelda: Tears of the Kingdom',
-    precio: 69.99,
-    descripcion: 'La secuela de Breath of the Wild que expande el mundo de Hyrule con nuevas habilidades, áreas aéreas y mecánicas de construcción innovadoras.'
-  }
-];
+  const arrayProductos = [
+    {
+      id: 1,
+      nombre: "The Witcher 3: Wild Hunt",
+      precio: 39.99,
+      descripcion:
+        "Un juego de rol de mundo abierto que sigue la historia de Geralt de Rivia, un cazador de monstruos en un mundo fantástico lleno de criaturas y conflictos políticos.",
+    },
+    {
+      id: 2,
+      nombre: "Red Dead Redemption 2",
+      precio: 59.99,
+      descripcion:
+        "Ambientado en el lejano oeste, este juego cuenta la historia de Arthur Morgan y la banda de Van der Linde mientras luchan por sobrevivir en una América en transformación.",
+    },
+    {
+      id: 3,
+      nombre: "Cyberpunk 2077",
+      precio: 49.99,
+      descripcion:
+        "Un RPG de acción en primera persona situado en Night City, una metrópolis obsesionada con el poder, el glamour y las modificaciones corporales.",
+    },
+    {
+      id: 4,
+      nombre: "Elden Ring",
+      precio: 59.99,
+      descripcion:
+        "Un juego de rol de acción desarrollado por FromSoftware que combina elementos de dark fantasy con un mundo abierto masivo y un sistema de combate desafiante.",
+    },
+    {
+      id: 5,
+      nombre: "God of War (2018)",
+      precio: 49.99,
+      descripcion:
+        "Kratos regresa en una nueva aventura nórdica donde debe guiar a su hijo Atreus a través de un mundo peligroso mientras enfrenta dioses y monstruos.",
+    },
+    {
+      id: 6,
+      nombre: "The Last of Us Part II",
+      precio: 69.99,
+      descripcion:
+        "Una secuela emocionalmente intensa que sigue a Ellie en su búsqueda de venganza en un mundo post-apocalíptico devastado por una infección fungal.",
+    },
+    {
+      id: 7,
+      nombre: "Grand Theft Auto V",
+      precio: 29.99,
+      descripcion:
+        "Tres criminales muy diferentes se ven obligados a trabajar juntos en una serie de peligrosos golpes en la ciudad ficticia de Los Santos.",
+    },
+    {
+      id: 8,
+      nombre: "Minecraft",
+      precio: 26.95,
+      descripcion:
+        "Un juego sandbox que permite a los jugadores construir y explorar mundos generados proceduralmente hechos completamente de bloques.",
+    },
+    {
+      id: 9,
+      nombre: "Call of Duty: Modern Warfare II",
+      precio: 69.99,
+      descripcion:
+        "Un shooter en primera persona que continúa la historia de la fuerza operativa 141 en misiones globales de alto riesgo contra nuevas amenazas.",
+    },
+    {
+      id: 10,
+      nombre: "FIFA 23",
+      precio: 59.99,
+      descripcion:
+        "El último título de la famosa saga de fútbol que incluye mejoras en el gameplay, gráficos actualizados y todos los equipos y ligas oficiales.",
+    },
+    {
+      id: 11,
+      nombre: "Overwatch 2",
+      precio: 0.0,
+      descripcion:
+        "Un shooter de equipo free-to-play que presenta héroes únicos con habilidades especiales en combates 5v5 dinámicos y estratégicos.",
+    },
+    {
+      id: 12,
+      nombre: "Animal Crossing: New Horizons",
+      precio: 54.99,
+      descripcion:
+        "Un juego de simulación social donde los jugadores crean su propia isla paradisíaca, decoran su hogar y hacen amigos con adorables animales.",
+    },
+    {
+      id: 13,
+      nombre: "Hogwarts Legacy",
+      precio: 59.99,
+      descripcion:
+        "Un RPG de acción ambientado en el mundo de Harry Potter donde los jugadores viven su propia aventura como estudiantes de Hogwarts en el siglo XIX.",
+    },
+    {
+      id: 14,
+      nombre: "Star Wars Jedi: Survivor",
+      precio: 69.99,
+      descripcion:
+        "La continuación de la historia de Cal Kestis, un jedi que debe enfrentar nuevas amenazas mientras el Imperio Galáctico lo persigue incansablemente.",
+    },
+    {
+      id: 15,
+      nombre: "Spider-Man: Miles Morales",
+      precio: 49.99,
+      descripcion:
+        "Sigue las aventuras de Miles Morales mientras aprende a dominar sus nuevos poderes y protege a Nueva York como el nuevo Spider-Man.",
+    },
+    {
+      id: 16,
+      nombre: "Resident Evil 4 Remake",
+      precio: 59.99,
+      descripcion:
+        "Un remake modernizado del clásico de terror y acción que sigue a Leon S. Kennedy en su misión para rescatar a la hija del presidente.",
+    },
+    {
+      id: 17,
+      nombre: "Baldur's Gate 3",
+      precio: 59.99,
+      descripcion:
+        "Un RPG basado en Dungeons & Dragons con una narrativa profunda, combate táctico por turnos y miles de opciones que afectan la historia.",
+    },
+    {
+      id: 18,
+      nombre: "Super Mario Odyssey",
+      precio: 49.99,
+      descripcion:
+        "Mario viaja por distintos reinos en su sombrero viviente Cappy para rescatar a la Princesa Peach de Bowser quien planea una boda forzada.",
+    },
+    {
+      id: 19,
+      nombre: "Assassin's Creed Valhalla",
+      precio: 39.99,
+      descripcion:
+        "Un RPG de acción que sigue a Eivor, un fiero vikingo que lidera a su clan desde Noruega hasta Inglaterra durante la era vikinga.",
+    },
+    {
+      id: 20,
+      nombre: "Legend of Zelda: Tears of the Kingdom",
+      precio: 69.99,
+      descripcion:
+        "La secuela de Breath of the Wild que expande el mundo de Hyrule con nuevas habilidades, áreas aéreas y mecánicas de construcción innovadoras.",
+    },
+  ];
 
   return (
     <>
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<ItemListContainer titulo="Bienvenido a la tienda" productos={arrayProductos} />
-} />
-          <Route path="/contact" element={<Form />} />         
-           <Route path="/products" element={<ItemListContainer titulo="Todos los Productos" productos={arrayProductos}/>
-} />
+
+          <Route
+            path="/"
+            element={
+              <ItemListContainer
+                titulo="Bienvenido a la tienda"
+                productos={arrayProductos}
+              />
+            }
+          />
+
+          <Route path="/contact" element={<Form />} />
+
+          <Route
+            path="/products"
+            element={
+              <ItemListContainer
+                titulo="Todos los Productos"
+                productos={arrayProductos}
+              />
+            }
+          />
+
+        
           {/* Podés agregar más rutas acá */}
         </Routes>
       </main>
