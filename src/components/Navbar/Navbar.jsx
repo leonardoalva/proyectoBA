@@ -18,21 +18,19 @@ const Navbar = () => {
   }, []);
 
   return (
-<header className={`navbar ${isOpen ? "navbar--expanded" : "navbar--collapsed"}`}>
+    <header className={`navbar ${isOpen ? "navbar--expanded" : "navbar--collapsed"}`}>
       <div className="navbar__brand">
         <h1 className="navbar__logo">Steam</h1>
       </div>
-<button
-  className={`navbar__toggle ${isOpen ? "open enlarged" : "shrinked"}`}
-  onClick={() => setIsOpen((prev) => !prev)}
-  aria-label="Toggle menu"
->
-  <span className="bar"></span>
-  <span className="bar"></span>
-  <span className="bar"></span>
-</button>
-
-
+      <button
+        className={`navbar__toggle${isOpen ? " open" : ""}`}
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
       <nav
         ref={menuRef}
         className={`navbar__navigation ${isOpen ? "navbar__navigation--open" : ""}`}
@@ -44,8 +42,8 @@ const Navbar = () => {
           <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
         </ul>
       </nav>
-
-      <div className="navbar__actions">
+      {/* Carrito debajo del menú */}
+      <div className="navbar__actions navbar__actions--bottom">
         <Link to="/cart" className="navbar__cart">Cart (0)</Link>
       </div>
     </header>
