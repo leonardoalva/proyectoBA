@@ -4,7 +4,7 @@ import Counter from "../Counter/Counter";
 const Item = ({ nombre, precio, descripcion }) => {
   return (
     <article className="card">
-      <h3>{nombre}</h3>
+      <h3 className="nombre_card">{nombre}</h3>
       <span className="precio_card">${precio}</span>
       <p className="descripcion_card">{descripcion}</p>
       <Counter />

@@ -10,7 +10,7 @@ const ItemListContainer = ({ titulo, productos }) => {
 
     return (
     <section>
-      <h1>{titulo}</h1>
+      <h1 className="tituloItemList">{titulo}</h1>
 
       <div>
         {productos.length > 0 ? <ItemList productos={productos} /> : <p>Cargando productos...</p>
