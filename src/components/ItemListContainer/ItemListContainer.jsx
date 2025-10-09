@@ -16,6 +16,7 @@ const ItemListContainer = ({ titulo, productos }) => {
         {productos.length > 0 ? <ItemList productos={productos} /> : <p>Cargando productos...</p>
 }
       </div>
+      <p>Se encontraron {productos.length} productos.</p>
     </section>
   );
 };

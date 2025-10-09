@@ -2,10 +2,11 @@ import "./App.css";
 import React from "react";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import Counter from "./components/Counter/Counter";
+
 import Form from "./components/Form/Form";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import Inicio from "./pages/Inicio";
 
 function App() {
   const arrayProductos = [
@@ -157,15 +158,7 @@ function App() {
       <main>
         <Routes>
 
-          <Route
-            path="/"
-            element={
-              <ItemListContainer
-                titulo="Bienvenido a la tienda"
-                productos={arrayProductos}
-              />
-            }
-          />
+          <Route path="/" element={<Inicio />} />
 
           <Route path="/contact" element={<Form />} />
 

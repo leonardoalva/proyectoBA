@@ -8,6 +8,7 @@ const Item = ({ nombre, precio, descripcion }) => {
       <span className="precio_card">${precio}</span>
       <p className="descripcion_card">{descripcion}</p>
       <Counter />
+
     </article>
   );
 };

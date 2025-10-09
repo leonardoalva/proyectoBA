@@ -8,6 +8,9 @@ const ItemList = ({ productos }) => {
         <Item key={prod.id} nombre={prod.nombre} precio={prod.precio} descripcion={prod.descripcion} />
       ))}
     </div>
+    <p> 
+      Total de productos: {productos.length}
+    </p>
     </>
   );
 };
