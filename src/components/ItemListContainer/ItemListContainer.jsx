@@ -4,27 +4,35 @@ import { useState, useEffect } from "react";
 
 const ItemListContainer = ({ titulo }) => {
   // estado para almacenar los productos
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
+
 
   useEffect(() => {
-    const fetchProductos = async () => {
-      const response = await fetch("/data/products.json");
-      const data = await response.json();
-      setProductos(data);
-    };
-
-    fetchProductos();
+  // Simular fetch a un archivo JSON local
+    fetch("/data/products.json")
+      .then((res) => {
+        if (!res.ok) {
+          // Si la respuesta no es OK, lanzar un error
+          throw new Error("Error en la respuesta de la red");
+        }
+        // Parsear la respuesta JSON
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error al cargar los productos:", error));
   }, []);
 
+
+
+  // renderizado
     return (
     <section>
       <h1 className="tituloItemList">{titulo}</h1>
 
       <div>
-        {productos.length > 0 ? <ItemList productos={productos} /> : <p>Cargando productos...</p>
+        {products.length > 0 ? <ItemList products={products} /> : <p>Cargando productos...</p>
 }
       </div>
-      <p>Se encontraron {productos.length} productos.</p>
     </section>
   );
 };

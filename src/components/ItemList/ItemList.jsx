@@ -1,15 +1,17 @@
 import "./ItemList.css";
 import Item from "../Item/Item";
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ products }) => {
   return (<>
     <div className="itemList_grid">
-      {productos.map((prod) => (
-        <Item key={prod.id} nombre={prod.nombre} precio={prod.precio} descripcion={prod.descripcion} />
+      {products.map((prod) => (
+        <Item key={prod.id} name={prod.name} price={prod.price} description={prod.description} >
+          <button className="btn_agregar">Agregar al carrito</button>
+        </Item>
       ))}
     </div>
     <p> 
-      Total de productos: {productos.length}
+      Total de productos: {products.length}
     </p>
     </>
   );

@@ -1,122 +1,82 @@
 [
-    {
-      "id": 1,
-      "nombre": "The Witcher 3: Wild Hunt",
-      "precio": 39.99,
-      "descripcion": "Un juego de rol de mundo abierto que sigue la historia de Geralt de Rivia, un cazador de monstruos en un mundo fantástico lleno de criaturas y conflictos políticos."
-    },
-    {
-      "id": 2,
-      "nombre": "Red Dead Redemption 2",
-      "precio": 59.99,
-      "descripcion": "Ambientado en el lejano oeste, este juego cuenta la historia de Arthur Morgan y la banda de Van der Linde mientras luchan por sobrevivir en una América en transformación."
-    },
-    {
-      "id": 3,
-      "nombre": "Cyberpunk 2077",
-      "precio": 49.99,
-      "descripcion": "Un RPG de acción en primera persona situado en Night City, una metrópolis obsesionada con el poder, el glamour y las modificaciones corporales."
-    },
-    {
-      "id": 4,
-      "nombre": "Elden Ring",
-      "precio": 59.99,
-      "descripcion": "Un juego de rol de acción desarrollado por FromSoftware que combina elementos de dark fantasy con un mundo abierto masivo y un sistema de combate desafiante."
-    },
-    {
-      "id": 5,
-      "nombre": "God of War (2018)",
-      "precio": 49.99,
-      "descripcion": "Kratos regresa en una nueva aventura nórdica donde debe guiar a su hijo Atreus a través de un mundo peligroso mientras enfrenta dioses y monstruos."
-    },
-    {
-      "id": 6,
-      "nombre": "The Last of Us Part II",
-      "precio": 69.99,
-      "descripcion": "Una secuela emocionalmente intensa que sigue a Ellie en su búsqueda de venganza en un mundo post-apocalíptico devastado por una infección fungal."
-    },
-    {
-      "id": 7,
-      "nombre": "Grand Theft Auto V",
-      "precio": 29.99,
-      "descripcion": "Tres criminales muy diferentes se ven obligados a trabajar juntos en una serie de peligrosos golpes en la ciudad ficticia de Los Santos."
-    },
-    {
-      "id": 8,
-      "nombre": "Minecraft",
-      "precio": 26.95,
-      "descripcion": "Un juego sandbox que permite a los jugadores construir y explorar mundos generados proceduralmente hechos completamente de bloques."
-    },
-    {
-      "id": 9,
-      "nombre": "Call of Duty: Modern Warfare II",
-      "precio": 69.99,
-      "descripcion": "Un shooter en primera persona que continúa la historia de la fuerza operativa 141 en misiones globales de alto riesgo contra nuevas amenazas."
-    },
-    {
-      "id": 10,
-      "nombre": "FIFA 23",
-      "precio": 59.99,
-      "descripcion": "El último título de la famosa saga de fútbol que incluye mejoras en el gameplay, gráficos actualizados y todos los equipos y ligas oficiales."
-    },
-    {
-      "id": 11,
-      "nombre": "Overwatch 2",
-      "precio": 0.0,
-      "descripcion": "Un shooter de equipo free-to-play que presenta héroes únicos con habilidades especiales en combates 5v5 dinámicos y estratégicos."
-    },
-    {
-      "id": 12,
-      "nombre": "Animal Crossing: New Horizons",
-      "precio": 54.99,
-      "descripcion": "Un juego de simulación social donde los jugadores crean su propia isla paradisíaca, decoran su hogar y hacen amigos con adorables animales."
-    },
-    {
-      "id": 13,
-      "nombre": "Hogwarts Legacy",
-      "precio": 59.99,
-      "descripcion": "Un RPG de acción ambientado en el mundo de Harry Potter donde los jugadores viven su propia aventura como estudiantes de Hogwarts en el siglo XIX."
-    },
-    {
-      "id": 14,
-      "nombre": "Star Wars Jedi: Survivor",
-      "precio": 69.99,
-      "descripcion": "La continuación de la historia de Cal Kestis, un jedi que debe enfrentar nuevas amenazas mientras el Imperio Galáctico lo persigue incansablemente."
-    },
-    {
-      "id": 15,
-      "nombre": "Spider-Man: Miles Morales",
-      "precio": 49.99,
-      "descripcion": "Sigue las aventuras de Miles Morales mientras aprende a dominar sus nuevos poderes y protege a Nueva York como el nuevo Spider-Man."
-    },
-    {
-      "id": 16,
-      "nombre": "Resident Evil 4 Remake",
-      "precio": 59.99,
-      "descripcion": "Un remake modernizado del clásico de terror y acción que sigue a Leon S. Kennedy en su misión para rescatar a la hija del presidente."
-    },
-    {
-      "id": 17,
-      "nombre": "Baldur's Gate 3",
-      "precio": 59.99,
-      "descripcion": "Un RPG basado en Dungeons & Dragons con una narrativa profunda, combate táctico por turnos y miles de opciones que afectan la historia."
-    },
-    {
-      "id": 18,
-      "nombre": "Super Mario Odyssey",
-      "precio": 49.99,
-      "descripcion": "Mario viaja por distintos reinos en su sombrero viviente Cappy para rescatar a la Princesa Peach de Bowser quien planea una boda forzada."
-    },
-    {
-      "id": 19,
-      "nombre": "Assassin's Creed Valhalla",
-      "precio": 39.99,
-      "descripcion": "Un RPG de acción que sigue a Eivor, un fiero vikingo que lidera a su clan desde Noruega hasta Inglaterra durante la era vikinga."
-    },
-    {
-      "id": 20,
-      "nombre": "Legend of Zelda: Tears of the Kingdom",
-      "precio": 69.99,
-      "descripcion": "La secuela de Breath of the Wild que expande el mundo de Hyrule con nuevas habilidades, áreas aéreas y mecánicas de construcción innovadoras."
-    }
+  {
+    "id": 1,
+    "name": "Juego de Tazas de Cerámica",
+    "price": 25.99,
+    "category": "Vajilla",
+    "description": "Set de 6 tazas de cerámica con diseño moderno, aptas para microondas y lavavajillas",
+    "imageUrl": "https://ejemplo.com/images/tazas-ceramica.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Velas Aromáticas",
+    "price": 12.50,
+    "category": "Decoración",
+    "description": "Pack de 3 velas aromáticas con esencia de lavanda, duración de 40 horas",
+    "imageUrl": "https://ejemplo.com/images/velas-aromaticas.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Mantel de Tela",
+    "price": 34.75,
+    "category": "Textiles",
+    "description": "Mantel rectangular de algodón 100%, medidas 150x200 cm, resistente a manchas",
+    "imageUrl": "https://ejemplo.com/images/mantel-tela.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Jarra de Vidrio",
+    "price": 18.99,
+    "category": "Cristalería",
+    "description": "Jarra transparente de vidrio templado con capacidad de 1.5 litros",
+    "imageUrl": "https://ejemplo.com/images/jarra-vidrio.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Organizador de Baño",
+    "price": 29.99,
+    "category": "Organización",
+    "description": "Organizador de bambú con 3 compartimentos para productos de baño",
+    "imageUrl": "https://ejemplo.com/images/organizador-bano.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Set de Cubiertos de Acero",
+    "price": 45.50,
+    "category": "Cubiertos",
+    "description": "Juego de 24 piezas de acero inoxidable con acabado brillante",
+    "imageUrl": "https://ejemplo.com/images/cubiertos-acero.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Portavelas Decorativo",
+    "price": 15.25,
+    "category": "Decoración",
+    "description": "Portavelas de cristal tallado con diseño geométrico",
+    "imageUrl": "https://ejemplo.com/images/portavelas-decorativo.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Cesta de Mimbre",
+    "price": 22.99,
+    "category": "Organización",
+    "description": "Cesta natural de mimbre para almacenamiento, ideal para lavandería o revistas",
+    "imageUrl": "https://ejemplo.com/images/cesta-mimbre.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Difusor de Aroma",
+    "price": 28.75,
+    "category": "Hogar",
+    "description": "Difusor de aceites esenciales con luz LED y función de temporizador",
+    "imageUrl": "https://ejemplo.com/images/difusor-aroma.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Set de Cojines Decorativos",
+    "price": 39.99,
+    "category": "Textiles",
+    "description": "Pack de 2 cojines con fundas de algodón y relleno de fibra hueca",
+    "imageUrl": "https://ejemplo.com/images/cojines-decorativos.jpg"
+  }
 ]
