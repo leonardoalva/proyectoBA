@@ -1,12 +1,20 @@
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
+import { useState, useEffect } from "react";
 
-const ItemListContainer = ({ titulo, productos }) => {
-  // estado
-  //logica 
- 
+const ItemListContainer = ({ titulo }) => {
+  // estado para almacenar los productos
+  const [productos, setProductos] = useState([]);
 
+  useEffect(() => {
+    const fetchProductos = async () => {
+      const response = await fetch("/data/products.json");
+      const data = await response.json();
+      setProductos(data);
+    };
 
+    fetchProductos();
+  }, []);
 
     return (
     <section>
