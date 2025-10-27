@@ -18,7 +18,10 @@ const ItemListContainer = ({ titulo }) => {
         // Parsear la respuesta JSON
         return res.json();
       })
+      // Actualizar el estado con los datos obtenidos
       .then((data) => setProducts(data))
+
+      // Manejar errores en la carga de datos
       .catch((error) => console.error("Error al cargar los productos:", error));
   }, []);
 
@@ -26,14 +29,14 @@ const ItemListContainer = ({ titulo }) => {
 
   // renderizado
     return (
-    <section>
+    <main>
       <h1 className="tituloItemList">{titulo}</h1>
 
       <div>
         {products.length > 0 ? <ItemList products={products} /> : <p>Cargando productos...</p>
 }
       </div>
-    </section>
+    </main>
   );
 };
 
