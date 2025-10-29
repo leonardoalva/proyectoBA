@@ -1,8 +1,18 @@
 import { useState } from "react";
 import "./Counter.css";
+import { useCart } from "../../context/useCart";
 
-function Counter() {
+
+function Counter({ item}) {
   const [counter, setCounter] = useState(0);
+  const { agregarAlCarrito } = useCart();
+
+    const agregarItem = () => {
+
+    if (counter > 0) {
+      agregarAlCarrito({ ...item, count: counter });
+    }
+  };
 
   return (
     <div>
@@ -22,6 +32,12 @@ function Counter() {
         Disminuir
       </button>
 
+      <button
+        className="btn_counter"
+        onClick={() => agregarItem(item)}
+      >
+        Agregar al carrito
+      </button>
       
       {/* <button className='btn_counter' onClick={()=>setCounter(0)}>Resetear</button> */}
     </div>

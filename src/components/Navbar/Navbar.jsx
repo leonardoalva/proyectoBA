@@ -1,18 +1,28 @@
 import React, { useState, useRef, useEffect } from "react";
+import {useCart} from '../../context/useCart';
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
+
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const { cart, getCant } = useCart();
+  // número total de items (suma de las cantidades 'count' en cada producto)
+  const cartItems = typeof getCant === "function" ? getCant() : (cart ? cart.length : 0);
+  
+
   useEffect(() => {
+    // Cierra el menú si se hace clic fuera de él
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
+    // Agrega el listener
     document.addEventListener("mousedown", handleClickOutside);
+    // Limpia el listener al desmontar el componente
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
@@ -26,9 +36,9 @@ const Navbar = () => {
       {/* Logo + botón + carrito siempre visibles */}
       <div className="navbar__top">
         <div className="navbar__brand">
-          <h1 className="navbar__logo">Steam</h1>
+          <h1 className="navbar__logo">Baxar</h1>
         </div>
-
+        {/* Botón de menú */}
         <div className="navbar__right">
           <button
             className={`navbar__toggle${isOpen ? " open" : ""}`}
@@ -39,8 +49,8 @@ const Navbar = () => {
             <span className="bar"></span>
             <span className="bar"></span>
           </button>
-
-          <Link to="/cart" className="navbar__cart">Cart (0)</Link>
+          {/* Icono del carrito */}
+          <Link to="/cart" className="navbar__cart">Cart ({cartItems})</Link>
         </div>
       </div>
 
