@@ -20,7 +20,7 @@ function Counter({ item}) {
       <p>Cantidad:{counter}</p>
 
       <button className="btn_counter" onClick={() => setCounter(counter + 1)}>
-        Aumentar
+        +
       </button>
 
       <button
@@ -29,7 +29,7 @@ function Counter({ item}) {
           if (counter > 0) setCounter(counter - 1);
         }}
       >
-        Disminuir
+        -
       </button>
 
       <button
