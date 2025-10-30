@@ -1,6 +1,6 @@
-import { Item } from "../Item/Item";
+import Item from '/src/components/Item/Item';
 
-export const ItemDetail = ({ detail }) => {
+const ItemDetail = ({ detail }) => {
   return (
 
 
@@ -8,7 +8,9 @@ export const ItemDetail = ({ detail }) => {
     //en Item y dejar como estaba el ItemList, sin modificaciones
 
     <Item {...detail}>
-      <button>Enviar al carrito</button>
+      <button>Agregar al carrito ahora</button>
     </Item>
   );
 };
+
+export default ItemDetail;

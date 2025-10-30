@@ -57,9 +57,8 @@ const Navbar = () => {
       {/* Menú expandible */}
       <nav ref={menuRef} className="navbar__navigation">
         <ul className="navbar__menu">
-          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/products" onClick={() => setIsOpen(false)}>DLC</Link></li>
-          <li><Link to="/games" onClick={() => setIsOpen(false)}>Games</Link></li>
+          <li><Link to="/products" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/games" onClick={() => setIsOpen(false)}>Quienes somos?</Link></li>
           <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
         </ul>
       </nav>

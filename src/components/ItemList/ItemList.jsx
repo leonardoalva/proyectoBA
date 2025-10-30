@@ -8,10 +8,10 @@ const ItemList = ({ products }) => {
   return (<>
     <div className="itemList_grid">
       {products.map((prod) => (
-        <Item key={prod.id} name={prod.name} price={prod.price} description={prod.description} >
+        
+        <Item key={prod.id} {...prod} />
 
-          <Counter item={prod} />
-        </Item>
+        
       ))}
     </div>
 
