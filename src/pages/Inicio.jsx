@@ -20,8 +20,8 @@ const Inicio = () => {
   return (
     <section className="inicio inicio--fullscreen">
       <div className="inicio__content">
-        <h2>Bienvenido a la tienda</h2>
-        <p>Encuentra los mejores juegos y DLCs aquí.</p>
+        <h2>Cultivate</h2>
+        <p>Encuentra los mejores productos para tu cultivo. </p>
         <div className="inicio__btn-wrap">
           <button className="inicio__btn" onClick={handleClick} aria-label="Ver productos">
             <span>Ver</span>

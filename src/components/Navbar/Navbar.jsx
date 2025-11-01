@@ -36,7 +36,7 @@ const Navbar = () => {
       {/* Logo + botón + carrito siempre visibles */}
       <div className="navbar__top">
         <div className="navbar__brand">
-          <h1 className="navbar__logo">Baxar</h1>
+          <Link to="/" className="navbar__logo">Cultivate</Link>
         </div>
         {/* Botón de menú */}
         <div className="navbar__right">
