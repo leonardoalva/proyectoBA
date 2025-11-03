@@ -25,6 +25,7 @@
   z-index: 1000;
   overflow: hidden;
   will-change: transform, height;
+  width: 100%;
 }
 
 .navbar--collapsed {
@@ -38,7 +39,7 @@
 /* Top row: logo + toggle + carrito */
 .navbar__top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   width: 100%;
