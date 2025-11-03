@@ -34,7 +34,7 @@ const Item = ({ id, name, price, description, imageUrl }) => {
       }
       {showDetailLink && (
         <Link to={`/detail/${id}`} className="boton_detalle">
-          <button>Ver detalle</button>
+          <button className="btn_detalle">Ver detalle</button>
         </Link>
       )}
 

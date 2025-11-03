@@ -15,13 +15,13 @@ function Counter({ item}) {
   };
 
   return (
-    <div>
-
-      <p>Cantidad:{counter}</p>
+    <div className="Counter_Container">
 
       <button className="btn_counter" onClick={() => setCounter(counter + 1)}>
         +
       </button>
+
+      <p>{counter}</p>
 
       <button
         className="btn_counter"
@@ -36,7 +36,7 @@ function Counter({ item}) {
         className="btn_counter"
         onClick={() => agregarItem(item)}
       >
-        Agregar al carrito
+        Agregar
       </button>
       
       {/* <button className='btn_counter' onClick={()=>setCounter(0)}>Resetear</button> */}

@@ -29,7 +29,7 @@ const ItemListContainer = ({ titulo }) => {
 
   // renderizado
     return (
-    <main>
+    <main className="item-list-container">
       <h1 className="tituloItemList">{titulo}</h1>
 
       <div>

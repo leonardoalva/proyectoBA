@@ -1,6 +1,15 @@
 .itemList_grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+    padding: 8px;
+}
+
+/* Larger screens: responsive multi-column grid */
+@media (min-width: 600px) {
+    .itemList_grid{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 10px; }
+}
+
+@media (min-width: 900px) {
+    .itemList_grid{ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; padding: 12px; }
 }

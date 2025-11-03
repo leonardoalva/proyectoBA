@@ -6,6 +6,8 @@ const Inicio = () => {
   const navigate = useNavigate();
   const rippleRef = useRef(null);
 
+
+  
   const handleClick = () => {
     // Inicia la animación: agregar clase que expande el círculo
     if (rippleRef.current) {
@@ -20,8 +22,10 @@ const Inicio = () => {
   return (
     <section className="inicio inicio--fullscreen">
       <div className="inicio__content">
-        <h2>Cultivate</h2>
-        <p>Encuentra los mejores productos para tu cultivo. </p>
+        <h2>Flexa</h2>
+        <p>Las mejores prendas 
+        para tu estilo de vida.
+        </p>
         <div className="inicio__btn-wrap">
           <button className="inicio__btn" onClick={handleClick} aria-label="Ver productos">
             <span>Ver</span>

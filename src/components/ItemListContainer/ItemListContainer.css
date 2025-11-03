@@ -1,5 +1,54 @@
-.tituloItemList{
-   font-size: 2rem;
-   margin-bottom: 1rem;
-   text-align: center;
+.item-list-container{
+   padding: 14px;
+   max-width: 1100px;
+   margin: 0 auto;
+   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+   color: #0f172a;
+   background: transparent;
 }
+
+.tituloItemList{
+   font-size: 1.125rem;
+   margin: 0 0 12px 0;
+   text-align: center;
+   font-weight: 700;
+   color: #0f172a;
+}
+
+.item-list-container p {
+   color: #6b7280;
+   text-align: center;
+   padding: 18px 0;
+}
+
+/* The grid itself is defined in ItemList.css; add spacing and responsive tweaks here */
+.itemList_grid{
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   gap: 12px;
+   padding: 6px;
+}
+
+.itemList_grid .card{
+   transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.itemList_grid .card:hover{
+   transform: translateY(-4px);
+   box-shadow: 0 12px 24px rgba(2,6,23,0.06);
+}
+
+/* Medium screens: switch to multi-column layout */
+@media (min-width: 600px){
+   .tituloItemList{ font-size: 1.25rem; }
+   .itemList_grid{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; padding: 12px; }
+}
+
+/* Desktop: more breathing room */
+@media (min-width: 900px){
+   .item-list-container{ padding: 20px; }
+   .itemList_grid{ grid-template-columns: repeat(3, minmax(240px, 1fr)); gap: 20px; }
+}
+
+/* Accessibility focus for keyboard users */
+.itemList_grid .card:focus-within{ outline: 3px solid rgba(59,130,246,0.08); }

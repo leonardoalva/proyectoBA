@@ -8,6 +8,7 @@ import Form from "./components/Form/Form";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Inicio from "./pages/Inicio";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const { id } = useParams();
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="app_main">
         <Routes>
           <Route path="/" element={<Inicio />} />
 
@@ -26,6 +27,10 @@ function App() {
             element={<ItemListContainer titulo="categoria" />}
           />
 
+          <Route
+            path="/cart"
+            element={<Cart />}
+          />
           <Route
             path="/products"
             element={<ItemListContainer titulo="Todos los Productos" />}

@@ -32,7 +32,7 @@ fetch('/data/products.json')
 
 
   return (
-<main>
+<main className="item-detail-container">
   {/* Renderizado condicional basado en la carga del detalle, object.key devuelve una lista de claves, y el length verifica si hay datos */}
     {Object.keys(detail).length > 0 ? (
       <ItemDetail detail={detail} />
