@@ -2,6 +2,7 @@ import { Children } from "react";
 import Counter from "../Counter/Counter";
 import { Link, useLocation } from "react-router-dom";
 import "./Item.css";
+import React from "react";
 
 const Item = ({ id, name, price, description, imageUrl }) => {
   // Obtener la ubicación actual para condicionales de renderizado
