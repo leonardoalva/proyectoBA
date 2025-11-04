@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Inicio from "./pages/Inicio";
 import Cart from "./components/Cart/Cart";
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
 
 function App() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<Inicio />} />
 
           <Route path="/contact" element={<Form />} />
-
+          <Route path="/admin" element={<ProductFormContainer />} />
           <Route
             path="/category/:category"
             element={<ItemListContainer titulo="categoria" />}
