@@ -24,6 +24,7 @@
 }
 
 .nombre_card {
+  font-family: "Elms Sans", sans-serif;
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
@@ -36,12 +37,13 @@
 .precio_card {
   font-size: 0.98rem;
   font-weight: 700;
-  color: #064e3b;
+  color: #03910b;
 }
 
 .descripcion_card {
+  font-family: "Elms Sans", sans-serif;
   font-size: 0.92rem;
-  color: #475569;
+  color: #374251;
   line-height: 1.4;
   max-height: 3.6rem; /* clamp text to ~3 lines */
   overflow: hidden;
