@@ -21,9 +21,9 @@
 .tituloItemList{
    font-size: clamp(1.125rem, 1.6vw, 1.6rem);
    font-family: "Elms Sans", sans-serif;
-   margin: 0 0 14px 0;
+   margin: 14px 0 14px 0;
    text-align: center;
-   font-weight: 800;
+   font-weight: 600;
    color: black;
    letter-spacing: -0.02em;
    line-height: 1.05;

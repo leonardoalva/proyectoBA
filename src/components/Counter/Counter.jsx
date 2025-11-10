@@ -3,7 +3,7 @@ import "./Counter.css";
 import { useCart } from "../../context/useCart";
 
 
-function Counter({ item}) {
+function Counter({ item, onConfirm}) {
   const [counter, setCounter] = useState(0);
   const { agregarAlCarrito } = useCart();
 

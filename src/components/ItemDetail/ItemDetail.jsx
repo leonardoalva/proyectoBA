@@ -1,4 +1,5 @@
 import Item from '/src/components/Item/Item';
+import Counter from '/src/components/Counter/Counter';
 
 const ItemDetail = ({ detail }) => {
   return (
@@ -8,7 +9,7 @@ const ItemDetail = ({ detail }) => {
     //en Item y dejar como estaba el ItemList, sin modificaciones
 
     <Item {...detail}>
-      <button>Agregar al carrito ahora</button>
+      <Counter item={detail} onConfirm={() => console.log("Item agregado al carrito")} />
     </Item>
   );
 };
