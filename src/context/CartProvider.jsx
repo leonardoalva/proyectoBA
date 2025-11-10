@@ -10,8 +10,9 @@ function CartProvider({ children }) {
   const agregarAlCarrito = (prod) => {
     if (!prod) return; // proteger contra llamadas con undefined
 
-    const prodCount = prod.count ?? 1; // por defecto 1 si no viene
-    const prodWithCount = { ...prod, count: prodCount };
+  const prodCount = prod.count ?? 1; // por defecto 1 si no viene
+
+  const prodWithCount = { ...prod, count: prodCount, price: prod.price ?? 0 };
     // Verifica si el producto ya está en el carrito
     const isInCart = carrito.some(
       (item) => item && item.id === prodWithCount.id
@@ -37,7 +38,6 @@ function CartProvider({ children }) {
       setCarrito([...carrito, prodWithCount]);
     }
 
-    // El logging se hace en el useEffect para reflejar el estado actualizado
     Swal.fire({
       title: "¡Producto agregado!",
       icon: "success",
@@ -58,7 +58,7 @@ function CartProvider({ children }) {
 
   const getTotal = () => {
     return carrito.reduce(
-      (acc, prod) => acc + (prod?.count ?? 0) * (prod?.precio ?? 0),
+      (acc, prod) => acc + (prod?.count ?? 0) * (prod?.price ?? 0),
       0
     );
   };

@@ -8,7 +8,7 @@ const Cart = () => {
   console.log("Carrito en componente Cart:", cart);
 
   const totalAmount = (cart || []).reduce((total, item) => {
-    return total + ((item?.price ?? item?.precio ?? 0) * (item?.count ?? 0));
+    return total + (item?.price ?? 0) * (item?.count ?? 0);
   }, 0);
 
   const imgSrc = (imageUrl, name) => {
@@ -20,7 +20,7 @@ const Cart = () => {
     <div className="cart">
       <h2 className="cart__title">Carrito de Compras</h2>
 
-      {(!cart || cart.length === 0) ? (
+      {!cart || cart.length === 0 ? (
         <p className="cart__empty">El carrito está vacío.</p>
       ) : (
         <ul className="cart-list">
@@ -36,14 +36,21 @@ const Cart = () => {
 
               <div className="cart-item__info">
                 <div className="cart-item__title">{item.name}</div>
-                <div className="cart-item__meta">Precio: ${item.price ?? item.precio ?? 0} × {item.count ?? 0} = ${((item?.price ?? item?.precio ?? 0) * (item?.count ?? 0)).toFixed(2)}</div>
+
+                <div className="cart-item__meta">
+                  Precio: ${item.price ?? 0} × {item.count ?? 0} = $
+                  {((item?.price ?? 0) * (item?.count ?? 0)).toFixed(2)}
+                </div>
               </div>
             </li>
           ))}
         </ul>
       )}
-
-      <div className="cart__total">Total: <span className="cart__total-amount">${totalAmount}</span></div>
+      {cart.length > 0 && (
+        <div className="cart__total">
+          Total: <span className="cart__total-amount">${totalAmount}</span>
+        </div>
+      )}
     </div>
   );
 };
