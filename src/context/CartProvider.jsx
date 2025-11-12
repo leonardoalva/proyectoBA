@@ -13,6 +13,8 @@ function CartProvider({ children }) {
   const prodCount = prod.count ?? 1; // por defecto 1 si no viene
 
   const prodWithCount = { ...prod, count: prodCount, price: prod.price ?? 0 };
+
+  
     // Verifica si el producto ya está en el carrito
     const isInCart = carrito.some(
       (item) => item && item.id === prodWithCount.id

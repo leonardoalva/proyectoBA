@@ -10,14 +10,21 @@ function Counter({onConfirm, btnText }) {
     }
   };
 
+  const increment = () => {
+    setCounter((prev) => prev + 1);
+  };
+
+  const decrement = () => {
+    if (counter > 0) {
+      setCounter((prev) => prev - 1);
+    }}
+
   return (
     <div className="Counter_Container">
       <button
         className="btn_counter"
         disabled={counter === 0}
-        onClick={() => {
-          if (counter > 0) setCounter((prev) => prev - 1);
-        }}
+        onClick={decrement}
       >
         -
       </button>
@@ -25,7 +32,7 @@ function Counter({onConfirm, btnText }) {
 
       <button
         className="btn_counter"
-        onClick={() => setCounter((prev) => prev + 1)}
+        onClick={increment}
       >
         +
       </button>
@@ -39,4 +46,4 @@ function Counter({onConfirm, btnText }) {
   );
 }
 
-export default Counter;
+export default Counter
