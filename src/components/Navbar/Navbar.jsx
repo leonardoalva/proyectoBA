@@ -37,11 +37,12 @@ const Navbar = () => {
       {/* Logo + botón + carrito siempre visibles */}
       <div className="navbar__top">
         <div className="navbar__brand">
-          <Link to="/" className="navbar__logo">
+          <Link to="/products" className="navbar__logo">
             Fluxa
           </Link>
           
         </div>
+        
         {/* Botón de menú */}
                   <button
             className={`navbar__toggle${isOpen ? " open" : ""}`}

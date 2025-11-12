@@ -1,10 +1,12 @@
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ titulo }) => {
   // estado para almacenar los productos
   const [products, setProducts] = useState([]);
+  const { category } = useParams();
 
 
   useEffect(() => {
@@ -13,17 +15,23 @@ const ItemListContainer = ({ titulo }) => {
       .then((res) => {
         if (!res.ok) {
           // Si la respuesta no es OK, lanzar un error
-          throw new Error("Error en la respuesta de la red");
+          throw new Error("Error en la respuesta");
         }
         // Parsear la respuesta JSON
         return res.json();
       })
-      // Actualizar el estado con los datos obtenidos
-      .then((data) => setProducts(data))
+      // Filtrar productos por categoría si se proporciona
+      .then((data) => {
+        if (category) {
+          setProducts(data.filter((product) => product.category === category));
+        } else {
+          setProducts(data);
+        }
+      })
 
       // Manejar errores en la carga de datos
       .catch((error) => console.error("Error al cargar los productos:", error));
-  }, []);
+  }, [category]);
 
 
 
