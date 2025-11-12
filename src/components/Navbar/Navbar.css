@@ -1,13 +1,13 @@
 /* Variables de tema */
-:root{
-  --bg: #000000;
-  --surface: #0f0f0f;
-  --muted: #a5a5a5;
-  --text: #e9e9e9;
-  --accent: #bc0bdf;
-  --accent-strong: #8f08a9;
-  --cart-occupied-bg: #6e6e6e; /* gris cuando hay items */
-  --cart-occupied-bg-dark: #5b5b5b;
+:root {
+  --bg: #FFEAEA;
+  --surface: #F5CBCB;
+  --muted: #9ECAD6;
+  --text: #748DAE;
+  --accent: #748DAE;
+  --accent-strong: #9ECAD6;
+  --cart-occupied-bg: #9ECAD6; /* azul claro cuando hay items */
+  --cart-occupied-bg-dark: #748DAE;
   --radius: 8px;
   --nav-transition: 280ms cubic-bezier(.22,.9,.36,1);
 }
@@ -18,13 +18,16 @@
   flex-direction: column;
   align-items: stretch;
   padding: 1rem 2rem;
-  background-color: var(--bg);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background-color: #748DAE;
+  box-shadow: 0 6px 18px rgba(116,141,174,0.45);
   position: sticky;
   top: 0;
   z-index: 1000;
   overflow: hidden;
   will-change: transform, height;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .navbar--collapsed {
@@ -47,10 +50,10 @@
 .navbar__logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text);
+  color: #ffffff;
   margin: 0;
   letter-spacing: 0.25px;
-  text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
   font-family: "Elms Sans", sans-serif;
 }
 
@@ -69,7 +72,7 @@
   width: 44px;
   height: 44px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: var(--radius);
   cursor: pointer;
   padding: 6px;
@@ -78,12 +81,12 @@
 }
 
 .navbar__toggle:hover {
-  background-color: rgba(255,255,255,0.02);
-  border-color: rgba(255,255,255,0.06);
+  background-color: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
 }
 
 .navbar__toggle:focus-visible {
-  outline: 2px solid rgba(188,11,223,0.18);
+  outline: 2px solid rgba(255,255,255,0.3);
   outline-offset: 3px;
 }
 
@@ -92,7 +95,7 @@
   display: block;
   width: 22px;
   height: 2.5px;
-  background-color: var(--text);
+  background-color: #ffffff;
   margin: 3px 0;
   border-radius: 2px;
   transition: transform 220ms var(--nav-transition), opacity 200ms ease;
@@ -139,7 +142,7 @@
 .navbar__menu li a {
   display: inline-block;
   text-decoration: none;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 500;
   padding: 0.45rem 0.85rem;
   border-radius: 6px;
@@ -148,8 +151,8 @@
 
 .navbar__menu li a:hover,
 .navbar__menu li a:focus {
-  background-color: rgba(255,255,255,0.02);
-  color: var(--accent);
+  background-color: rgba(255,255,255,0.2);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
@@ -159,10 +162,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.4rem 0.9rem;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 700;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 999px;
   transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 120ms ease;
 }
@@ -178,14 +181,16 @@
 .navbar__cart:hover,
 .navbar__cart:focus {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.25);
 }
 
 /* Estado cuando el carrito tiene items: gris claro con texto blanco */
 .navbar__cart.has-items {
   color: #ffffff;
   border-color: transparent;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.2);
 }
 
 /* Badge de contador con posicionamiento absoluto */
@@ -199,17 +204,19 @@
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
-  background: #5100ff;
-  color: #fff;
+  background: #F5CBCB;
+  color: #748DAE;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 700;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  border: 2px solid var(--bg);
+  border: 2px solid #748DAE;
 }
 
 /* Responsive: en mobile el menu pasa a columna y el toggle se mantiene legible */
 @media (max-width: 768px) {
+
+
   .navbar__menu {
     flex-direction: column;
     gap: 0.5rem;
@@ -225,6 +232,18 @@
   .navbar__toggle {
     width: 44px;
     height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+
+
+  .navbar__logo {
+    font-size: 1.3rem;
+  }
+
+  .navbar__top {
+    gap: 0.5rem;
   }
 }
 
