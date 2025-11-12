@@ -22,9 +22,9 @@ const Inicio = () => {
   return (
     <section className="inicio inicio--fullscreen">
       <div className="inicio__content">
-        <h2>Flexa</h2>
+        <h2>Fluxa</h2>
         <p>Las mejores prendas 
-        para tu estilo de vida.
+        para tu estilo.
         </p>
         <div className="inicio__btn-wrap">
           <button className="inicio__btn" onClick={handleClick} aria-label="Ver productos">

@@ -3,13 +3,11 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cart } = useCart();
+  const { cart, borrarDelCarrito, getTotal, checkout, clearCart} = useCart();
 
   console.log("Carrito en componente Cart:", cart);
 
-  const totalAmount = (cart || []).reduce((total, item) => {
-    return total + (item?.price ?? 0) * (item?.count ?? 0);
-  }, 0);
+  const totalAmount = getTotal().toFixed(2);
 
   const imgSrc = (imageUrl, name) => {
     if (!imageUrl) return "/images/placeholder.png";
@@ -41,15 +39,21 @@ const Cart = () => {
                   Precio: ${item.price ?? 0} × {item.count ?? 0} = $
                   {((item?.price ?? 0) * (item?.count ?? 0)).toFixed(2)}
                 </div>
+
+                <button className="botonDel" onClick={() => borrarDelCarrito(item)}>Eliminar</button>
               </div>
             </li>
           ))}
         </ul>
       )}
       {cart.length > 0 && (
-        <div className="cart__total">
-          Total: <span className="cart__total-amount">${totalAmount}</span>
-        </div>
+        <>
+          <div className="cart__total">
+            Total: <span className="cart__total-amount">${totalAmount}</span>
+          </div>
+          <button onClick={clearCart}>Vaciar Carrito</button>
+          <button className="checkout-btn" onClick={checkout}>Finalizar Compra</button>
+        </>
       )}
     </div>
   );

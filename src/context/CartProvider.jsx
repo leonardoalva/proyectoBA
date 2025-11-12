@@ -1,6 +1,7 @@
 
 import { CartContext } from "./CartContext";
 import { useState, useEffect } from "react";
+import { AbortedDeferredError } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function CartProvider({ children }) {
@@ -49,9 +50,31 @@ function CartProvider({ children }) {
     });
   };
 
-  const borrarDelCarrito = (prod) => {
-    const cartSinElProducto = carrito.filter((item) => item.id !== prod.id);
-    setCarrito(cartSinElProducto);
+  const borrarDelCarrito = async (prod) => {
+    const result = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¿Deseas eliminar este producto del carrito?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#748DAE',
+      cancelButtonColor: '#9ECAD6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    });
+
+    if (result.isConfirmed) {
+      const cartSinElProducto = carrito.filter((item) => item.id !== prod.id);
+      setCarrito(cartSinElProducto);
+      
+      Swal.fire({
+        title: 'Eliminado',
+        text: 'Producto removido del carrito',
+        icon: 'success',
+        timer: 1500,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+    }
   };
 
   const getCant = () => {
@@ -65,9 +88,46 @@ function CartProvider({ children }) {
     );
   };
 
-  const clearCart = () => {
+  const clearCart = async () => {
+  const result = await Swal.fire({
+    title: '¿Vaciar carrito?',
+    text: '¿Estás seguro de que quieres vaciar tu carrito?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#748DAE',
+    cancelButtonColor: '#9ECAD6',
+    confirmButtonText: 'Sí, vaciar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
     setCarrito([]);
   };
+  }
+const checkout = async () => {
+  const result = await Swal.fire({
+    title: '¿Finalizar compra?',
+    text: '¿Estás seguro de que quieres completar tu compra?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#748DAE',
+    cancelButtonColor: '#9ECAD6',
+    confirmButtonText: 'Sí, finalizar',
+    cancelButtonText: 'Cancelar'
+  });
+
+  if (result.isConfirmed) {
+    clearCart();
+    Swal.fire({
+      title: '¡Compra realizada!',
+      text: 'Tu pedido ha sido procesado exitosamente.',
+      icon: 'success',
+      timer: 2500,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    });
+  }
+};
 
   // Loggea el carrito cada vez que cambie (útil para depuración)
   useEffect(() => {
@@ -83,6 +143,7 @@ function CartProvider({ children }) {
         getCant,
         getTotal,
         clearCart,
+        checkout
       }}
     >
       {children}

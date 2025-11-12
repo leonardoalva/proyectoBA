@@ -1,12 +1,9 @@
-/* ===================================
-   Cart Component - Professional Styles
-   ================================== */
-
 /* Mobile-first base styles */
 .cart {
+
   padding: 20px 16px;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 30px auto;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #748DAE;
   background: linear-gradient(180deg, #FFEAEA 0%, #F5CBCB 100%);
@@ -115,6 +112,49 @@
   color: #748DAE;
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.botonDel{
+  background-color: #748DAE;
+}
+
+.botonDel:hover{
+  background-color: red;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  background: linear-gradient(135deg, #9ECAD6, #748DAE);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(116, 141, 174, 0.2);
+  letter-spacing: 0.02em;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+.checkout-btn:hover {
+  background: linear-gradient(135deg, #748DAE, #9ECAD6);
+  box-shadow: 0 8px 20px rgba(116, 141, 174, 0.3);
+  transform: translateY(-2px);
+}
+
+.checkout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(116, 141, 174, 0.2);
+}
+
+.checkout-btn:focus-visible {
+  outline: 2px solid #748DAE;
+  outline-offset: 2px;
 }
 
 /* ===================================
