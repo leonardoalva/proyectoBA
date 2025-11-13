@@ -12,19 +12,13 @@ const Item = ({ id, name, price, description, imageUrl, children, category }) =>
   // Mostrar el enlace de detalle solo si no estamos ya en la página de detalle
   const showDetailLink = !location.pathname.startsWith("/detail");
 
-  // Manejo de la ruta de la imagen
-  const imgSrc = imageUrl
-    ? imageUrl.startsWith("/")
-      ? imageUrl
-      : `/${imageUrl}`
-    : "/images/placeholder.png";
 
   return (
     <article className="card">
       <img
         className="imagen_card"
         // Manejo de la ruta de la imagen
-        src={imgSrc}
+        src={imageUrl}
         alt={description || name}
       />
 

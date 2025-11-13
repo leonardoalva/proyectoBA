@@ -2,6 +2,8 @@ import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { getProducts } from "../../services/products";
+
 
 const ItemListContainer = ({ titulo }) => {
   // estado para almacenar los productos
@@ -10,16 +12,8 @@ const ItemListContainer = ({ titulo }) => {
 
 
   useEffect(() => {
-  // Simular fetch a un archivo JSON local
-    fetch("/data/products.json")
-      .then((res) => {
-        if (!res.ok) {
-          // Si la respuesta no es OK, lanzar un error
-          throw new Error("Error en la respuesta");
-        }
-        // Parsear la respuesta JSON
-        return res.json();
-      })
+    // Obtener productos desde el servicio
+    getProducts()
       // Filtrar productos por categoría si se proporciona
       .then((data) => {
         if (category) {

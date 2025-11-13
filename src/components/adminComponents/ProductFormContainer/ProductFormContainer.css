@@ -1,0 +1,17 @@
+.product-form-container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-around
+}
+
+.label-upload {
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin: 10px;
+}

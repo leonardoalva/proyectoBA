@@ -4,8 +4,12 @@ import { validateProducts } from "../../../utils/validateProducts";
 import { uploadToImgbb } from "../../../services/uploadImage";
 import { createProduct } from "../../../services/products";
 
+import "./ProductFormContainer.css";
 
 export const ProductFormContainer = () => {
+  const [loading, setLoading] = useState();
+  const [file, setFile] = useState(null);
+  const [errors, setErrors] = useState({});
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -13,9 +17,6 @@ export const ProductFormContainer = () => {
     category: "",
     file: null,
   });
-  const [loading, setLoading] = useState();
-  const [file, setFile] = useState(null);
-  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,12 +33,14 @@ export const ProductFormContainer = () => {
 
     const productWithFile = { ...product, file };
     const newErrors = validateProducts(productWithFile);
+
     // If there are validation errors, set them and stop submission
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       setLoading(false);
       return;
     }
+    // Proceed with image upload and product creation
     try {
       const imageUrl = await uploadToImgbb(file);
       const productData = {
@@ -62,7 +65,7 @@ export const ProductFormContainer = () => {
   };
 
   return (
-    <ProductFormUI
+    <ProductFormUI className="product-form-container"
       product={product}
       errors={errors}
       onChange={handleChange}
