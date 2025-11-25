@@ -9,10 +9,6 @@ const Cart = () => {
 
   const totalAmount = getTotal().toFixed(2);
 
-  const imgSrc = (imageUrl, name) => {
-    if (!imageUrl) return "/images/placeholder.png";
-    return imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`;
-  };
 
   return (
     <div className="cart">
@@ -26,7 +22,7 @@ const Cart = () => {
             <li className="cart-item" key={item.id}>
               <img
                 className="cart-item__img"
-                src={imgSrc(item.imageUrl, item.name)}
+                src={item.imageUrl}
                 alt={item.name}
                 width="48"
                 height="48"
